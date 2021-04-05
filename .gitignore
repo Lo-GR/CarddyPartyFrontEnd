@@ -6,4 +6,4 @@ coverage/
 bin/
 obj/
 */appsettings.json
-*/package-lock.json
+/package-lock.json
