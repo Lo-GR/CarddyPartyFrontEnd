@@ -6,7 +6,7 @@ html, body {
   width:100%;
   margin:0;
 }
-html {
+/* html {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -32,9 +32,10 @@ h2 {
   height: 20%;
 
   /* -webkit-transform:scale(.5); 
-  transform:scale(.5); */
-}
-.images:hover {
+  transform:scale(.5);
+  } */
+
+/* .images:hover {
   -webkit-transform:scale(2.0); 
   transform:scale(2.0);
 }
@@ -108,52 +109,5 @@ h2 {
 .moon {
   margin-top: 30px;
   text-align: center;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+} 
+*/ 
