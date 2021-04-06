@@ -2,13 +2,61 @@
 <html lang="en-US">
 
 <head>
-  <title>APOD NASA Site</title>
+  <title>Carddy Party</title>
 </head>
 
 <body>
   <div class="container">
-    <button type="button" class="btn btn-outline-primary" id="randomButton">Test</button>
-    <div class="output"></div>
+    <!-- An upper window containing the Prompt(s) -->
+    <div class="row">
+      <div class="prompt-window">
+        <p>PROMPT WINDOW HERE</p>
+      </div>
+    </div>
+    <!-- Middle section to hold the cards after submit -->
+    <div class="row">
+      <div class="col-4">
+        <div class="card-style">
+          Card 1 Here
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card-style">
+          Card 2 Here
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card-style">
+          Card 3 Here
+        </div>
+      </div>
+    </div>
+    <!-- Lower section with text box to enter card info, submit button, area that displays which player you are, place that displays which card you're submitting (and how many out of) -->
+    <div class="action-panel">
+      <div class="row">
+        <div class="col-3">
+          <div class="player-number">
+            <div class="player-number-text">
+              1
+            </div>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="submit">
+            <div class="form-group">
+              <div class="row">
+                <label for="answer">Answer:</label>
+                <input type="text" class="form-control" id="answer">
+              </div>
+              <div class="row">
+                <button type="button" class="btn btn-outline-primary" id="randomButton">Submit</button>
+                <div class="output"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 
