@@ -60,3 +60,7 @@ html, body {
   margin: 15px;
   /* float: right; */
 }
+
+.empty-space {
+  padding-bottom: 30%;
+}
