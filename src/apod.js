@@ -16,10 +16,10 @@ export default class APIReturn{
   }
 
   //Fetch Prompts
-  static promptAPI (id){
+  static promptAPI (){
     return new Promise(function (resolve, reject) {
       let request = new XMLHttpRequest();
-      const api = `http://localhost:5000/api/Prompts/${id}`;
+      const api = `http://localhost:5000/api/Prompts/random`;
       request.onload = function () {
         if (this.status === 200) {
           resolve(request.response);
