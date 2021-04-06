@@ -14,4 +14,21 @@ export default class APIReturn{
       request.send();
     });
   }
+
+  //Fetch Prompts
+  static promptAPI (id){
+    return new Promise(function (resolve, reject) {
+      let request = new XMLHttpRequest();
+      const api = `http://localhost:5000/api/Prompts/${id}`;
+      request.onload = function () {
+        if (this.status === 200) {
+          resolve(request.response);
+        } else {
+          reject(request.response);
+        }
+      };
+      request.open("GET", api, true);
+      request.send();
+    });
+  }
 }
