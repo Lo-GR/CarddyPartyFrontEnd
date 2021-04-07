@@ -5,31 +5,40 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import APIReturn from './functions.js';
 
-// function getRandomInt(max) {
-//   return Math.floor(Math.random() * Math.floor(max));
-// }
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 
 $(document).ready(function () {
-  // let submits = 0;
+  let submits = -1;
   let cardNumber = 1;
 
+  let cards = [];
+  let selectedcard = -70;
+
   // This will display Card #2's data on Card 1 visually
-  // $("#getCardButton").click(function () {
-  //   if (submits > 2) {
-  //     submits === 0;
-  //   }
-  //   submits++;
-  //   let promise2 = APIReturn.testAPI();
-  //   promise2.then(function (response) {
-  //     const body = JSON.parse(response);
-  //     $(`.card-${submits}`).text(body[getRandomInt(56)].answer);
-  //     // Lots of fun stuff behind-the-scenes here
-  //     console.log(`submits is ${submits}`);
-  //   }, function (error) {
-  //     $('.output').text(`There was an error processing your request: ${error}`);
-  //     console.log(error);
-  //   });
-  // });
+  $("#getCardButton").click(function () {
+    if (submits > 2) {
+      submits === -1;
+    }
+    submits++;
+    let promise2 = APIReturn.testAPI();
+    promise2.then(function (response) {
+        const body = JSON.parse(response);
+        let grabbedCard = body[getRandomInt(14)];
+        // $(`.card-${submits}`).text(grabbedCard);
+        // Lots of fun stuff behind-the-scenes here
+        cards.push(grabbedCard);
+        console.log(`answer card is ${grabbedCard.answer}`);
+        $(`#card-${submits}`).text(grabbedCard.answer);
+        $(`#card-style-${submits}`).show(500);
+        // cards.push(grabbedCard.cardid);
+        console.log(cards);
+    }, function (error) {
+      $('.output').text(`There was an error processing your request: ${error}`);
+      console.log(error);
+    });
+  });
 
   // This is going to be the button to fetch Prompts
   // $("#promptButton").click(function () {
@@ -79,13 +88,26 @@ $(document).ready(function () {
   });
 
   // Events to happen on any mouse click
-  // window.addEventListener("click", function () {
+  window.addEventListener("click", function () {
 
-  //   const clicked = event.target;
-  //   const currentID = clicked.id || "No ID!";
-  //   const coords = currentID.split("-");
+    const clicked = event.target;
+    const currentID = clicked.id || "No ID!";
+    const coords = currentID.split("-");
+    const index = parseInt(coords[1]);
 
-  //   $(".output").text(`Chosen card is: ${coords[1]}`);
-  // });
-  // End mouse listener
+    $(".output").text(`Chosen card is: ${cards[index].cardId}`);
+    selectedcard = cards[index].cardId;
+  });
+
+  $("#submitCard").click(function () {
+    let promise3 = APIReturn.selectAPI(selectedcard);
+    promise3.then(function (response) {
+      const body = JSON.parse(response);
+      $(`.output`).text(body.answer);
+      console.log("test");
+    }, function (error) {
+      $('.output').text(`There was an error processing your request: ${error}`);
+      console.log(error);
+    });
+  });
 });
