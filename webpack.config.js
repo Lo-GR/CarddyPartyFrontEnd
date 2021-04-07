@@ -20,6 +20,12 @@ module.exports = {
       title: 'Carddy Party',
       template: './src/index.html',
       inject: 'body'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'judge.html',
+      title: 'Judge',
+      template: './src/judge.html',
+      inject: 'body'
     })
   ],
   module: {
