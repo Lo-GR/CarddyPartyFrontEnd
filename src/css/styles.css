@@ -115,6 +115,11 @@ html, body {
   flex-direction: row;
 }
 
+
 #turnOver {
   display: hidden;
+
+/* I admite this is a hack way to hide errors but it works */
+#errorOutput {
+  display: none;
 }
