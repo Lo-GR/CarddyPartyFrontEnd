@@ -2,7 +2,7 @@ export default class APIReturn {
   static testAPI() {
     return new Promise(function (resolve, reject) {
       let request = new XMLHttpRequest();
-      const api = `http://localhost:5000/api/Cards`;
+      const api = `http://localhost:5000/api/Cards/recent`;
       request.onload = function () {
         if (this.status === 200) {
           resolve(request.response);
