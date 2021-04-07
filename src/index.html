@@ -7,34 +7,32 @@
 
 <body>
   <div class="container">
-    <!-- An upper window containing the Prompt(s) -->
+
     <div class="row">
       <div class="empty-space">
-        <!-- Literally what the class describes, empty space -->
+        <p>Take a look at the monitor for instructions!</p>
       </div>
-      <!-- <div class="prompt-window">
-        <p class="prompt-window-text">PROMPT WINDOW HERE</p>
-      </div> -->
     </div>
-    <!-- Middle section to hold the cards after submit -->
-    <div class="row">
-      <div class="col-4">
-        <div class="card-style">
-          <div id="card-1">Card 1 Here</div>
+    <div id="cardContainer">
+      <div class="row">
+        <div class="col-4">
+          <div id="card-style-1">
+            <div id="card-1">Card 1 Here</div>
+          </div>
         </div>
-      </div>
-      <div class="col-4">
-        <div class="card-style">
-          <div id="card-2">Card 2 Here</div>
+        <div class="col-4">
+          <div id="card-style-2">
+            <div id="card-2">Card 2 Here</div>
+          </div>
         </div>
-      </div>
-      <div class="col-4">
-        <div class="card-style">
-          <div id="card-3">Card 3 Here</div>
+        <div class="col-4">
+          <div id="card-style-3">
+            <div id="card-3">Card 3 Here</div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Lower section with text box to enter card info, submit button, area that displays which player you are, place that displays which card you're submitting (and how many out of) -->
+
     <div class="action-panel">
       <div class="row">
         <div class="col-3">
@@ -48,23 +46,26 @@
           <div class="submit">
             <div class="form-group">
               <div class="row">
-                <label for="answer">Answer:</label>
-                <input type="text" class="form-control" id="answer">
-              </div>
-              <div class="row">
-                <!-- Answer submit Button goes here -->
-                <button type="button" class="btn btn-outline-primary" id="submitButton">Submit Answer</button>
+                <div class="col-6">
+                  <label for="answer">Answer:</label>
+                  <input type="text" class="form-control" id="answer" width=80%>
+                </div>
+                <div class="col-6">
+                  <button type="button" class="btn btn-outline-primary submit-button" id="submitButton">Submit This Answer</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-outline-primary" id="promptButton">Fetch Prompt</button>
-    <button type="button" class="btn btn-outline-primary" id="getCardButton">Gets a card from deck</button>
-    <button type="button" class="btn btn-outline-primary" id="cyclePlayer">Cycle Players</button>
-    <button type="button" class="btn btn-outline-primary" id="createNewCard">TEST</button>
-    <div class="output"></div>
+    <div class="button-panel">
+      <!-- <button type="button" class="btn btn-outline-primary" id="promptButton">Fetch Prompt</button> -->
+      <!-- <button type="button" class="btn btn-outline-primary" id="getCardButton">Gets a card from deck</button> -->
+      <button type="button" class="btn btn-outline-primary" id="cyclePlayer">Cycle Players</button>
+      <!-- <button type="button" class="btn btn-outline-primary" id="createNewCard">Create New Card</button> -->
+      <div class="output"></div>
+    </div>
   </div>
 </body>
 
