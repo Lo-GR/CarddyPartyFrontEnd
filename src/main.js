@@ -68,7 +68,7 @@ $(document).ready(function () {
     // DOM elements only
     // Take the given answer from the text box and pass it to the card on screen
     let answer = document.getElementById("answer").value;
-    $(`#card-${cardNumber}`).text(answer);
+    $(`#card-${cardNumber-1}`).text(answer);
     $(`#card-style-${cardNumber}`).show(500);
     // console.log(cardNumber);
     cardNumber++;
