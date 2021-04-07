@@ -24,16 +24,16 @@ $(document).ready(function () {
     submits++;
     let promise2 = APIReturn.testAPI();
     promise2.then(function (response) {
-        const body = JSON.parse(response);
-        let grabbedCard = body[getRandomInt(14)];
-        // $(`.card-${submits}`).text(grabbedCard);
-        // Lots of fun stuff behind-the-scenes here
-        cards.push(grabbedCard);
-        console.log(`answer card is ${grabbedCard.answer}`);
-        $(`#card-${submits}`).text(grabbedCard.answer);
-        $(`#card-style-${submits}`).show(500);
-        // cards.push(grabbedCard.cardid);
-        console.log(cards);
+      const body = JSON.parse(response);
+      let grabbedCard = body[getRandomInt(14)];
+      // $(`.card-${submits}`).text(grabbedCard);
+      // Lots of fun stuff behind-the-scenes here
+      cards.push(grabbedCard);
+      console.log(`answer card is ${grabbedCard.answer}`);
+      $(`#card-${submits}`).text(grabbedCard.answer);
+      $(`#card-style-${submits}`).show(500);
+      // cards.push(grabbedCard.cardid);
+      console.log(cards);
     }, function (error) {
       $('.output').text(`There was an error processing your request: ${error}`);
       console.log(error);
@@ -95,8 +95,15 @@ $(document).ready(function () {
     const coords = currentID.split("-");
     const index = parseInt(coords[1]);
 
-    $(".output").text(`Chosen card is: ${cards[index].cardId}`);
-    selectedcard = cards[index].cardId;
+    // This will stop the errors from outputting to the console
+    // Additionally, it outputs to a place on the page where it will theoretically never display :)
+    try {
+      $(".output").text(`Chosen card is: ${cards[index].cardId}`);
+      selectedcard = cards[index].cardId;
+    }
+    catch(err) {
+      document.getElementById("errorOutput").innerHTML = err.message;
+    }
   });
 
   $("#submitCard").click(function () {

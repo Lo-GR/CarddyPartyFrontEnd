@@ -71,7 +71,7 @@ export default class APIReturn {
       // console.log(JSON.stringify(params));
     });
   }
-// put response
+  // put response
   static selectAPI(selectedcard) {
     return new Promise(function () {
       console.log(selectedcard);
