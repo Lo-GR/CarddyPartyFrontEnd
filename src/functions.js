@@ -97,4 +97,34 @@ export default class APIReturn {
       // console.log(JSON.stringify(params));
     });
   }
+  static grabSelect2(id) {
+    return new Promise(function (resolve, reject) {
+      let request = new XMLHttpRequest();
+      const api = `http://localhost:5000/api/Cards/${id}`;
+      request.onload = function () {
+        if (this.status === 200) {
+          resolve(request.response);
+        } else {
+          reject(request.response);
+        }
+      };
+      request.open("GET", api, true);
+      request.send();
+    });
+  }
+  static grabSelect1() {
+    return new Promise(function (resolve, reject) {
+      let request = new XMLHttpRequest();
+      const api = `http://localhost:5000/api/Selects`;
+      request.onload = function () {
+        if (this.status === 200) {
+          resolve(request.response);
+        } else {
+          reject(request.response);
+        }
+      };
+      request.open("GET", api, true);
+      request.send();
+    });
+  }
 }
