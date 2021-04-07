@@ -121,6 +121,7 @@ $(document).ready(function () {
 
 
   // CODE FOR JUDGE STUFF
+  
   $("#getthemcards").click(function () {
     let promiseSelect1 = APIReturn.grabSelect1();
     promiseSelect1.then(function (response1) {
@@ -146,5 +147,44 @@ $(document).ready(function () {
     });
     
   }, 500);
+  });
+
+  // $("#button").click(function () {
+  //   let sec = $("#selectTime").val();
+  //   function timer(){
+  //     $("#button").hide();
+  //     $("#selectTime").hide();
+  //     $("#label").hide();
+      
+  //     $("#turnTimerDisplay").append(sec)
+  //     var timer = setInterval(function(){
+  //         document.getElementById('turnTimerDisplay').innerHTML=sec;
+  //         sec--;
+  //         if (sec < 0) {
+  //             clearInterval(timer);
+  //             $("#turnOver").show();
+  //             $("#turnTimerDisplay").hide();
+  //         }
+  //     }, 1000);
+  //   }  
+  // })
+document.getElementById('turnOver').style.visibility='hidden';
+$("#button").click(function () {
+// function timer(){
+	document.getElementById('button').style.visibility='hidden';
+  document.getElementById('selectTime').style.visibility='hidden';
+  document.getElementById('label').style.visibility='hidden';
+  var sec = document.getElementById('selectTime').value;
+  let turnTimerDisplay = document.getElementById('turnTimerDisplay');
+  turnTimerDisplay.append(sec)
+  var timer = setInterval(function(){
+      document.getElementById('turnTimerDisplay').innerHTML=sec;
+      sec--;
+      if (sec < 0) {
+          clearInterval(timer);
+          document.getElementById('turnOver').style.visibility='visible';
+          document.getElementById('turnTimerDisplay').style.visibility='hidden';
+      }
+    }, 1000);
   });
 });
