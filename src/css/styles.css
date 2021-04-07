@@ -18,8 +18,7 @@ html, body {
   border-radius: 30px; */
 }
 
-#card-style-1, #card-style-2, #card-style-3 {
-  display: none;
+#card-style-1, #card-style-2, #card-style-3, .gotCards {
   text-align: center;
   margin-top: 15px;
   margin-left: 50px;
@@ -36,6 +35,9 @@ html, body {
   box-shadow: 10px 10px 8px #888888;
   max-height: 400px;
   overflow-wrap: break-word;
+}
+#card-style-1, #card-style-2, #card-style-3{
+  display: none;
 }
 
 /* .test-card-1, .test-card-2, .test-card-3 {
@@ -111,4 +113,8 @@ html, body {
 .flex {
   display: flex;
   flex-direction: row;
+}
+
+#turnOver {
+  display: hidden;
 }

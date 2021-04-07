@@ -5,9 +5,55 @@
   <title>Carddy Party</title>
 </head>
 <body>
-  <div class="prompt-window">
-    <p class="prompt-window-text"></p>
+    <div class="row">
+      <div class="col-3">
+        <div class="gotCards">
+          <div class="prompt-window">
+            <p class="prompt-window-text"></p>
+          </div>  
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="gotCards">
+          <div class="prompt-window">
+            <p class="prompt-window-text"></p>
+          </div>  
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="gotCards">
+          <div class="prompt-window">
+            <p class="prompt-window-text"></p>
+          </div>  
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="gotCards">
+          <div class="prompt-window">
+            <p class="prompt-window-text"></p>
+          </div>  
+        </div>
+      </div>
+    </div>
+    <div class="container">
+    <button type="button" class="btn btn-outline-primary" id="getthemcards">Get recent cards</button>
+
+
+
+    <div id="turnTimer">
+      <h2>Turn Timer</h2>
+      <span id="turnOver"><p>Turn Over!</p></span>
+      <p id="turnTimerDisplay"></p>
+      
+      <label for="selectTime" id="label">Select a timer</label>
+      <select name="selectTime" id="selectTime">
+          <option value="10">10</option>
+        <option value="30">30</option>
+          <option value="45">45</option>
+          <option value="60">60</option>
+      </select>
+      <button  id="button">Start</button>
+    </div>
   </div>
-  <button type="button" class="btn btn-outline-primary" id="getthemcards">Get recent cards</button>
 </body>
 </html>
