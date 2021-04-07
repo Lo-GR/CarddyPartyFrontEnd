@@ -34,9 +34,11 @@ export default class APIReturn {
 
   //Submit Prompts
   static submitAPI() {
-    return new Promise(function (resolve, reject) {
+    return new Promise(function () {
       let answer = document.getElementById("answer").value;
-      let id = 1; // This will need to be the PlayerId
+      
+      // This will be the Player ID - it grabs the DIV text
+      let id = document.getElementById('playerId').textContent;
 
       var http = new XMLHttpRequest();
       var url = 'http://localhost:5000/api/Cards';
@@ -53,7 +55,7 @@ export default class APIReturn {
         if (http.readyState == 4 && http.status == 200) {
           alert(http.responseText);
         }
-      }
+      };
 
       var params = new Object();
       params.answer = answer;
@@ -66,7 +68,7 @@ export default class APIReturn {
       }
 
       http.send(JSON.stringify(params));
-      console.log(JSON.stringify(params));
+      // console.log(JSON.stringify(params));
     });
   }
 }

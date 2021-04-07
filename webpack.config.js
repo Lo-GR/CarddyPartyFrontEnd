@@ -17,7 +17,7 @@ module.exports = {
     new Dotenv(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'APOD NASA Site',
+      title: 'Carddy Party',
       template: './src/index.html',
       inject: 'body'
     })
