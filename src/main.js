@@ -10,6 +10,7 @@ function getRandomInt(max) {
 }
 
 $(document).ready(function () {
+  // CODE FOR INDEX
   let submits = -1;
   let cardNumber = 1;
 
@@ -116,5 +117,34 @@ $(document).ready(function () {
       $('.output').text(`There was an error processing your request: ${error}`);
       console.log(error);
     });
+  });
+
+
+  // CODE FOR JUDGE STUFF
+  $("#getthemcards").click(function () {
+    let promiseSelect1 = APIReturn.grabSelect1();
+    promiseSelect1.then(function (response1) {
+      const selectbody = JSON.parse(response1);
+      setTimeout(function(){
+      for (let i = selectbody.length - 4; i <= selectbody.length; i++ )
+      {
+        console.log(selectbody[i].selectedcard);
+        let promiseSelect2 = APIReturn.grabSelect2(selectbody[i].selectedcard);
+        promiseSelect2.then(function(response2){
+          const body = JSON.parse(response2);
+          $('.prompt-window-text').append(body.answer);
+        }, function (error2){
+          $('.output').text(`There was an error processing your request: ${error2}`);
+        console.log(error2);
+        });
+      }
+      $('.prompt-window-text').text(body.description);
+      // console.log(body);
+    }, function (error1) {
+      $('.output').text(`There was an error processing your request: ${error1}`);
+      console.log(error1);
+    });
+    
+  }, 500);
   });
 });
