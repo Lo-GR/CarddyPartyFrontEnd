@@ -34,7 +34,7 @@ export default class APIReturn {
 
   //Submit Prompts
   static submitAPI() {
-    return new Promise(function (resolve, reject) {
+    return new Promise(function () {
       let answer = document.getElementById("answer").value;
       
       // This will be the Player ID - it grabs the DIV text
@@ -55,7 +55,7 @@ export default class APIReturn {
         if (http.readyState == 4 && http.status == 200) {
           alert(http.responseText);
         }
-      }
+      };
 
       var params = new Object();
       params.answer = answer;

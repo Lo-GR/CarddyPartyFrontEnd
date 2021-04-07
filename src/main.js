@@ -3,7 +3,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import APIReturn from './apod.js';
+import APIReturn from './functions.js';
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
