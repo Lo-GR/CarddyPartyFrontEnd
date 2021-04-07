@@ -9,13 +9,13 @@ html, body {
 }
 
 .prompt-window {
-  font-size: 72px;
+  font-size: 40px;
   text-align: center;
   width: 100%;
-  /* padding: 50px;
+  padding: 50px;
   border: 10px solid rgba(255, 145, 0, 0.877);
   border-style: groove ridge ridge groove;
-  border-radius: 30px; */
+  border-radius: 30px;
 }
 
 #card-style-1, #card-style-2, #card-style-3, .gotCards {
@@ -38,6 +38,9 @@ html, body {
 }
 #card-style-1, #card-style-2, #card-style-3{
   display: none;
+}
+.judgeControls{
+  padding-top: 50px;
 }
 
 /* .test-card-1, .test-card-2, .test-card-3 {

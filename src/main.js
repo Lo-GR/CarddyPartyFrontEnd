@@ -114,11 +114,24 @@ $(document).ready(function () {
 
 
   // CODE FOR JUDGE STUFF
+
+  $("#promptButton").click(function () {
+    let promise = APIReturn.promptAPI();
+    promise.then(function (response) {
+      const body = JSON.parse(response);
+      $('.prompt-window-text').text(body.description);
+      // console.log(body);
+    }, function (error) {
+      $('.output').text(`There was an error processing your request: ${error}`);
+      console.log(error);
+    });
+  });
   
   $("#getthemcards").click(function () {
     let promiseSelect1 = APIReturn.grabSelect1();
     promiseSelect1.then(function (response1) {
       const selectbody = JSON.parse(response1);
+      let selectCounter = 1;
       setTimeout(function(){
       for (let i = selectbody.length - 4; i <= selectbody.length; i++ )
       {
@@ -126,7 +139,8 @@ $(document).ready(function () {
         let promiseSelect2 = APIReturn.grabSelect2(selectbody[i].selectedcard);
         promiseSelect2.then(function(response2){
           const body = JSON.parse(response2);
-          $('.prompt-window-text').append(body.answer);
+          $('.cardtext' + selectCounter).html(body.answer);
+          selectCounter ++;
         }, function (error2){
           $('.output').text(`There was an error processing your request: ${error2}`);
         console.log(error2);
@@ -177,6 +191,9 @@ $("#button").click(function () {
           clearInterval(timer);
           document.getElementById('turnOver').style.visibility='visible';
           document.getElementById('turnTimerDisplay').style.visibility='hidden';
+          document.getElementById('button').style.visibility='visible';
+          document.getElementById('selectTime').style.visibility='visible';
+          document.getElementById('label').style.visibility='visible';
       }
     }, 1000);
   });
