@@ -32,6 +32,22 @@ export default class APIReturn {
     });
   }
 
+  static promptAPITheme(theme) {
+    return new Promise(function (resolve, reject) {
+      let request = new XMLHttpRequest();
+      const api = `https://localhost:5001/api/Prompts?theme=${theme}`;
+      request.onload = function () {
+        if (this.status === 200) {
+          resolve(request.response);
+        } else {
+          reject(request.response);
+        }
+      };
+      request.open("GET", api, true);
+      request.send();
+    });
+  }
+
   //Submit Prompts
   static submitAPI() {
     return new Promise(function () {

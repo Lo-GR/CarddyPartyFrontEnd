@@ -131,12 +131,26 @@ $(document).ready(function () {
 
 
   // CODE FOR JUDGE STUFF
-
+  let prompt;
   $("#promptButton").click(function () {
     let promise = APIReturn.promptAPI();
     promise.then(function (response) {
       const body = JSON.parse(response);
       $('.prompt-window-text').text(body.description);
+      prompt = body;
+      // console.log(body);
+    }, function (error) {
+      $('.output').text(`There was an error processing your request: ${error}`);
+      console.log(error);
+    });
+  });
+  $("#promptButton2").click(function () {
+    console.log(prompt.theme);
+    let promise = APIReturn.promptAPITheme(prompt.theme);
+    promise.then(function (response) {
+      const body = JSON.parse(response);
+      let newPrompt = body[getRandomInt(body.length)];
+      $('.prompt-window-text').text(newPrompt.description);
       // console.log(body);
     }, function (error) {
       $('.output').text(`There was an error processing your request: ${error}`);
