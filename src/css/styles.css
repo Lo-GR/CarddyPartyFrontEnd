@@ -1,3 +1,11 @@
+/* Color Palette
+75C9C8
+80A1D4
+525252
+FC7A1E
+F9C784
+*/
+
 * {
   box-sizing: border-box;
 }
@@ -8,6 +16,13 @@ html, body {
   margin:0;
 }
 
+body {
+  background-image: url('../img/bg.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
 .prompt-window {
   font-size: 40px;
   text-align: center;
@@ -16,6 +31,7 @@ html, body {
   border: 10px solid rgba(255, 145, 0, 0.877);
   border-style: groove ridge ridge groove;
   border-radius: 30px;
+  background-color: white;
 }
 
 #card-style-1, #card-style-2, #card-style-3, .gotCards {
@@ -30,7 +46,8 @@ html, body {
   width: 280px;
   height: 400px;
   /* padding-bottom: 250px; */
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
+  background-color: #D8ECFD;
   border: 1px solid gray;
   border-radius: 30px;
   box-shadow: 10px 10px 8px #888888;
@@ -142,15 +159,19 @@ html, body {
 
 #p1Score {
   border-color: lightskyblue;
+  background-color: white;
 }
 #p2Score {
   border-color: lightgreen;
+  background-color: white;
 }
 #p3Score {
   border-color: orange;
+  background-color: white;
 }
 #p4Score {
   border-color: hotpink;
+  background-color: white;
 }
 
 #scoreboard {
@@ -172,4 +193,8 @@ html, body {
   /* border: 1px solid black; */
   border-radius: 5px;
   padding: 10px;
+}
+
+btn-primary {
+  background-color: #D8ECFD;
 }
