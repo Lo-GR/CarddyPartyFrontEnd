@@ -35,7 +35,7 @@ export default class APIReturn {
   static promptAPITheme(theme) {
     return new Promise(function (resolve, reject) {
       let request = new XMLHttpRequest();
-      const api = `https://localhost:5001/api/Prompts?theme=${theme}`;
+      const api = `http://localhost:5000/api/Prompts?theme=${theme}`;
       request.onload = function () {
         if (this.status === 200) {
           resolve(request.response);
