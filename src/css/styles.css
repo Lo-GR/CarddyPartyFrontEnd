@@ -22,7 +22,8 @@ body {
   background-attachment: fixed;
   background-size: 100% 100%;
 }
-.prompt-window, .judgeControls {
+
+.prompt-window, .judgeControls, .empty-space {
   width: 100%;
   padding: 50px;
   border: 10px solid #FC7A1E;
@@ -64,7 +65,7 @@ body {
 
 .timerthing {
   background-color: #F9C784;
-  border: 6px solid #FC7A1E;
+  border: 6px solid #ff9a52;
   border-radius: 2px;
   box-shadow: 2px 2px 8px #888888;
 }
@@ -135,7 +136,7 @@ body {
 }
 
 .empty-space {
-  font-size: 72px;
+  font-size: 40px;
   text-align: center;
   width: 100%;
 }
@@ -186,6 +187,10 @@ body {
   position: fixed;
   right: 50px;
   top: 30%;
+  padding: 20px;
+  border: 3px solid rgba(255, 145, 0, 0.877);
+  border-radius: 15px;
+  background-color: white;
 }
 
 /* This is such a hack omg */
