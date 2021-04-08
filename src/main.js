@@ -132,12 +132,26 @@ $(document).ready(function () {
 
 
   // CODE FOR JUDGE STUFF
-
+  let prompt;
   $("#promptButton").click(function () {
     let promise = APIReturn.promptAPI();
     promise.then(function (response) {
       const body = JSON.parse(response);
       $('.prompt-window-text').text(body.description);
+      prompt = body;
+      // console.log(body);
+    }, function (error) {
+      $('.output').text(`There was an error processing your request: ${error}`);
+      console.log(error);
+    });
+  });
+  $("#promptButton2").click(function () {
+    console.log(prompt.theme);
+    let promise = APIReturn.promptAPITheme(prompt.theme);
+    promise.then(function (response) {
+      const body = JSON.parse(response);
+      let newPrompt = body[getRandomInt(body.length)];
+      $('.prompt-window-text').text(newPrompt.description);
       // console.log(body);
     }, function (error) {
       $('.output').text(`There was an error processing your request: ${error}`);
@@ -150,27 +164,27 @@ $(document).ready(function () {
     promiseSelect1.then(function (response1) {
       const selectbody = JSON.parse(response1);
       let selectCounter = 1;
-      setTimeout(function () {
-        for (let i = selectbody.length - 4; i <= selectbody.length; i++) {
-          console.log(selectbody[i].selectedcard);
-          let promiseSelect2 = APIReturn.grabSelect2(selectbody[i].selectedcard);
-          promiseSelect2.then(function (response2) {
-            const body = JSON.parse(response2);
-            $('.cardtext' + selectCounter).html(body.answer);
-            selectCounter++;
-          }, function (error2) {
-            $('.output').text(`There was an error processing your request: ${error2}`);
-            console.log(error2);
-          });
-        }
-        // $('.prompt-window-text').text(body.description);
-        // console.log(body);
-      }, function (error1) {
-        $('.output').text(`There was an error processing your request: ${error1}`);
-        console.log(error1);
-      });
-
-    }, 500);
+      setTimeout(function(){
+      for (let i = selectbody.length - 3; i <= selectbody.length; i++ )
+      {
+        console.log(selectbody[i].selectedcard);
+        let promiseSelect2 = APIReturn.grabSelect2(selectbody[i].selectedcard);
+        promiseSelect2.then(function(response2){
+          const body = JSON.parse(response2);
+          $('.cardtext' + selectCounter).html(body.answer);
+          selectCounter ++;
+        }, function (error2){
+          $('.output').text(`There was an error processing your request: ${error2}`);
+        console.log(error2);
+        });
+      }
+      $('.prompt-window-text').text(body.description);
+      // console.log(body);
+    }, function (error1) {
+      $('.output').text(`There was an error processing your request: ${error1}`);
+      console.log(error1);
+    });
+  }, 500);
   });
 
   // $("#button").click(function () {

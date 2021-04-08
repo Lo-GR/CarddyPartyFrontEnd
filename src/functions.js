@@ -2,7 +2,7 @@ export default class APIReturn {
   static testAPI() {
     return new Promise(function (resolve, reject) {
       let request = new XMLHttpRequest();
-      const api = `http://localhost:5000/api/Cards`;
+      const api = `http://localhost:5000/api/Cards/recent`;
       request.onload = function () {
         if (this.status === 200) {
           resolve(request.response);
@@ -20,6 +20,22 @@ export default class APIReturn {
     return new Promise(function (resolve, reject) {
       let request = new XMLHttpRequest();
       const api = `http://localhost:5000/api/Prompts/random`;
+      request.onload = function () {
+        if (this.status === 200) {
+          resolve(request.response);
+        } else {
+          reject(request.response);
+        }
+      };
+      request.open("GET", api, true);
+      request.send();
+    });
+  }
+
+  static promptAPITheme(theme) {
+    return new Promise(function (resolve, reject) {
+      let request = new XMLHttpRequest();
+      const api = `https://localhost:5001/api/Prompts?theme=${theme}`;
       request.onload = function () {
         if (this.status === 200) {
           resolve(request.response);
