@@ -129,6 +129,28 @@ html, body {
 #errorOutput {
   display: none;
 }
+.btn-circle.btn-md {
+  width: 50px;
+  height: 50px;
+  padding: 7px 10px;
+  border-radius: 25px;
+  font-size: 10px;
+  text-align: center;
+  border-width: 5px;
+}
+
+#p1Score {
+  border-color: lightskyblue;
+}
+#p2Score {
+  border-color: lightgreen;
+}
+#p3Score {
+  border-color: orange;
+}
+#p4Score {
+  border-color: hotpink;
+}
 
 /* This is such a hack omg */
 #cyclePlayer {

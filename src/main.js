@@ -133,6 +133,30 @@ $(document).ready(function () {
 
   // CODE FOR JUDGE STUFF
   let prompt;
+  let player1Score = 0;
+  let player2Score = 0;
+  let player3Score = 0;
+  let player4Score = 0;
+  $('.p1').text(` ${player1Score}`);
+  $('.p2').text(` ${player2Score}`);
+  $('.p3').text(` ${player3Score}`);
+  $('.p4').text(` ${player4Score}`);
+  $("#p1Score").click(function () {
+    player1Score += 1;
+    $('.p1').text(` ${player1Score}`);
+  });
+  $("#p2Score").click(function () {
+    player2Score += 1;
+    $('.p2').text(` ${player2Score}`);
+  });
+  $("#p3Score").click(function () {
+    player3Score += 1;
+    $('.p3').text(` ${player3Score}`);
+  });
+  $("#p4Score").click(function () {
+    player4Score += 1;
+    $('.p4').text(` ${player4Score}`);
+  });
   $("#promptButton").click(function () {
     let promise = APIReturn.promptAPI();
     promise.then(function (response) {
@@ -158,7 +182,6 @@ $(document).ready(function () {
       console.log(error);
     });
   });
-
   $("#getthemcards").click(function () {
     let promiseSelect1 = APIReturn.grabSelect1();
     promiseSelect1.then(function (response1) {
