@@ -22,16 +22,17 @@ body {
   background-attachment: fixed;
   background-size: 100% 100%;
 }
-
-.prompt-window {
-  font-size: 40px;
-  text-align: center;
+.prompt-window, .judgeControls {
   width: 100%;
   padding: 50px;
-  border: 10px solid rgba(255, 145, 0, 0.877);
+  border: 10px solid #FC7A1E;
   border-style: groove ridge ridge groove;
   border-radius: 30px;
   background-color: white;
+}
+.prompt-window {
+  font-size: 40px;
+  text-align: center;
 }
 
 #card-style-1, #card-style-2, #card-style-3, .gotCards {
@@ -58,7 +59,14 @@ body {
   display: none;
 }
 .judgeControls{
-  padding-top: 50px;
+  margin-top: 50px;
+}
+
+.timerthing {
+  background-color: #F9C784;
+  border: 6px solid #FC7A1E;
+  border-radius: 2px;
+  box-shadow: 2px 2px 8px #888888;
 }
 
 /* .test-card-1, .test-card-2, .test-card-3 {
@@ -79,7 +87,7 @@ body {
   margin-top: 25px;
   margin-left: -40%;
   width: 80%;
-  border: 10px solid rgba(255, 145, 0, 0.877);
+  border: 10px solid #FC7A1E;
   border-style: groove ridge ridge groove;
   border-radius: 30px;
   /* padding-bottom: 75px; */
@@ -97,7 +105,7 @@ body {
   text-align: center;
   font-size: 72px;
   /* background-color: gray; */
-  border: 5px dotted rgba(255, 145, 0, 0.877);
+  border: 3px solid #F9C784;
   border-radius: 15px;
   /* padding: 50px; */
   width: 60%;
@@ -111,7 +119,7 @@ body {
 
 .submit {
   /* background-color: aqua; */
-  border: 5px dotted rgba(255, 145, 0, 0.877);
+  border: 3px solid #F9C784;
   border-radius: 15px;
   padding-left: 40px;
   padding-right: 40px;
