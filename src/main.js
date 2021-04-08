@@ -140,7 +140,7 @@ $(document).ready(function () {
       const selectbody = JSON.parse(response1);
       let selectCounter = 1;
       setTimeout(function(){
-      for (let i = selectbody.length - 4; i <= selectbody.length; i++ )
+      for (let i = selectbody.length - 3; i <= selectbody.length; i++ )
       {
         console.log(selectbody[i].selectedcard);
         let promiseSelect2 = APIReturn.grabSelect2(selectbody[i].selectedcard);
