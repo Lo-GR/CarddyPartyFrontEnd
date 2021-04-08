@@ -109,7 +109,8 @@ $(document).ready(function () {
     // This will stop the errors from outputting to the console
     // Additionally, it outputs to a place on the page where it will theoretically never display :)
     try {
-      $(".output").text(`Chosen card is: ${cards[index].cardId}`);
+      $(".output").text(`Chosen card is: ${cards[index].answer}`);
+      // ^ Ash changed from .cardid to .answer but this is an easy change back. Purely for user understanding.
       selectedcard = cards[index].cardId;
     }
     catch (err) {
