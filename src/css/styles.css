@@ -9,17 +9,16 @@ html, body {
 }
 
 .prompt-window {
-  font-size: 72px;
+  font-size: 40px;
   text-align: center;
   width: 100%;
-  /* padding: 50px;
+  padding: 50px;
   border: 10px solid rgba(255, 145, 0, 0.877);
   border-style: groove ridge ridge groove;
-  border-radius: 30px; */
+  border-radius: 30px;
 }
 
-#card-style-1, #card-style-2, #card-style-3 {
-  display: none;
+#card-style-1, #card-style-2, #card-style-3, .gotCards {
   text-align: center;
   margin-top: 15px;
   margin-left: 50px;
@@ -37,6 +36,12 @@ html, body {
   max-height: 400px;
   overflow-wrap: break-word;
 }
+#card-style-1, #card-style-2, #card-style-3{
+  display: none;
+}
+.judgeControls{
+  padding-top: 50px;
+}
 
 /* .test-card-1, .test-card-2, .test-card-3 {
   text-align: center;
@@ -49,8 +54,9 @@ html, body {
 } */
 
 .action-panel {
+  background-color: white;
   position: fixed;
-  bottom: 50px;
+  bottom: 100px;
   left: 50%;
   margin-top: 25px;
   margin-left: -40%;
@@ -113,7 +119,13 @@ html, body {
   flex-direction: row;
 }
 
-/* I admite this is a hack way to hide errors but it works */
+
+#turnOver {
+  display: hidden;
+}
+
+/* I admit this is a hack way to hide errors but it works */
+
 #errorOutput {
   display: none;
 }
@@ -138,4 +150,19 @@ html, body {
 }
 #p4Score {
   border-color: hotpink;
+}
+
+/* This is such a hack omg */
+#cyclePlayer {
+  position: relative;
+  right: 180%;
+}
+
+.output {
+  position: fixed;
+  bottom: 5px;
+  right: 15%;
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  padding: 10px;
 }
