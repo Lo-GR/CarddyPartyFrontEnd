@@ -110,6 +110,7 @@ $(document).ready(function () {
     // Additionally, it outputs to a place on the page where it will theoretically never display :)
     try {
       $(".output").text(`Chosen card is: ${cards[index].answer}`);
+      $(".output").show();
       // ^ Ash changed from .cardid to .answer but this is an easy change back. Purely for user understanding.
       selectedcard = cards[index].cardId;
     }
