@@ -26,7 +26,7 @@ $(document).ready(function () {
     let promise2 = APIReturn.testAPI();
     promise2.then(function (response) {
       const body = JSON.parse(response);
-      let grabbedCard = body[getRandomInt(14)];
+      let grabbedCard = body[getRandomInt(9)];
       // $(`.card-${submits}`).text(grabbedCard);
       // Lots of fun stuff behind-the-scenes here
       cards.push(grabbedCard);
