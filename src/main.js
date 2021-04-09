@@ -29,32 +29,16 @@ $(document).ready(function () {
     promise2.then(function (response) {
       const body = JSON.parse(response);
       let grabbedCard = body[getRandomInt(9)];
-      // $(`.card-${submits}`).text(grabbedCard);
-      // Lots of fun stuff behind-the-scenes here
       cards.push(grabbedCard);
       console.log(`answer card is ${grabbedCard.answer}`);
       $(`#card-${submits}`).text(grabbedCard.answer);
       $(`#card-style-${submits}`).show(500);
-      // cards.push(grabbedCard.cardid);
       console.log(cards);
     }, function (error) {
       $('.output').text(`There was an error processing your request: ${error}`);
       console.log(error);
     });
   });
-
-  // This is going to be the button to fetch Prompts
-  // $("#promptButton").click(function () {
-  //   let promise = APIReturn.promptAPI();
-  //   promise.then(function (response) {
-  //     const body = JSON.parse(response);
-  //     $('.prompt-window-text').text(body.description);
-  //     // console.log(body);
-  //   }, function (error) {
-  //     $('.output').text(`There was an error processing your request: ${error}`);
-  //     console.log(error);
-  //   });
-  // });
 
   // This is the function to submit the card to the database
   $("#submitButton").click(function () {
@@ -73,25 +57,16 @@ $(document).ready(function () {
     let answer = document.getElementById("answer").value;
     $(`#card-${cardNumber - 1}`).text(answer);
     $(`#card-style-${cardNumber}`).show(500);
-    // console.log(cardNumber);
     cardNumber++;
     $("#answer").val("");
 
     // Hide the submit button when
     if (cardNumber > 3) {
-      // $("#submitButton").hide();
       $("#submitButton").prop("disabled", true);
-
     }
   });
 
-  // $("#cyclePlayer").click(function () {
-  //   let answer = document.getElementById("answer").value;
-  //   $("#playerId").text(answer);
-  // });
-
   $("#cyclePlayer").click(function () {
-    // alert(typeof(playerNum));
     if (playerNum > 4) {
       playerNum = 1;
     }
@@ -110,8 +85,8 @@ $(document).ready(function () {
     // Additionally, it outputs to a place on the page where it will theoretically never display :)
     try {
       $(".output").text(`Chosen card is: ${cards[index].answer}`);
-      $(".output").show();
       // ^ Ash changed from .cardid to .answer but this is an easy change back. Purely for user understanding.
+      $(".output").show();
       selectedcard = cards[index].cardId;
     }
     catch (err) {
@@ -141,10 +116,12 @@ $(document).ready(function () {
   let player2Score = 0;
   let player3Score = 0;
   let player4Score = 0;
+
   $('.p1').text(` ${player1Score}`);
   $('.p2').text(` ${player2Score}`);
   $('.p3').text(` ${player3Score}`);
   $('.p4').text(` ${player4Score}`);
+
   $("#p1Score").click(function () {
     player1Score += 1;
     $('.p1').text(` ${player1Score}`);
@@ -161,18 +138,19 @@ $(document).ready(function () {
     player4Score += 1;
     $('.p4').text(` ${player4Score}`);
   });
+
   $("#promptButton").click(function () {
     let promise = APIReturn.promptAPI();
     promise.then(function (response) {
       const body = JSON.parse(response);
       $('.prompt-window-text').text(body.description);
       prompt = body;
-      // console.log(body);
     }, function (error) {
       $('.output').text(`There was an error processing your request: ${error}`);
       console.log(error);
     });
   });
+
   $("#promptButton2").click(function () {
     console.log(prompt.theme);
     let promise = APIReturn.promptAPITheme(prompt.theme);
@@ -180,12 +158,12 @@ $(document).ready(function () {
       const body = JSON.parse(response);
       let newPrompt = body[getRandomInt(body.length)];
       $('.prompt-window-text').text(newPrompt.description);
-      // console.log(body);
     }, function (error) {
       $('.output').text(`There was an error processing your request: ${error}`);
       console.log(error);
     });
   });
+  
   $("#getthemcards").click(function () {
     let promiseSelect1 = APIReturn.grabSelect1();
     promiseSelect1.then(function (response1) {
@@ -206,7 +184,6 @@ $(document).ready(function () {
         });
       }
       $('.prompt-window-text').text(body.description);
-      // console.log(body);
     }, function (error1) {
       $('.output').text(`There was an error processing your request: ${error1}`);
       console.log(error1);
@@ -214,28 +191,8 @@ $(document).ready(function () {
   }, 500);
   });
 
-  // $("#button").click(function () {
-  //   let sec = $("#selectTime").val();
-  //   function timer(){
-  //     $("#button").hide();
-  //     $("#selectTime").hide();
-  //     $("#label").hide();
-
-  //     $("#turnTimerDisplay").append(sec)
-  //     var timer = setInterval(function(){
-  //         document.getElementById('turnTimerDisplay').innerHTML=sec;
-  //         sec--;
-  //         if (sec < 0) {
-  //             clearInterval(timer);
-  //             $("#turnOver").show();
-  //             $("#turnTimerDisplay").hide();
-  //         }
-  //     }, 1000);
-  //   }  
-  // })
   document.getElementById('turnOver').style.visibility = 'hidden';
   $("#button").click(function () {
-    // function timer(){
     document.getElementById('button').style.visibility = 'hidden';
     document.getElementById('selectTime').style.visibility = 'hidden';
     document.getElementById('label').style.visibility = 'hidden';

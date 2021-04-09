@@ -48,8 +48,6 @@ body {
   padding-right: 20px;
   width: 280px;
   height: 400px;
-  /* padding-bottom: 250px; */
-  /* background-color: aliceblue; */
   background-color: #D8ECFD;
   border: 1px solid gray;
   border-radius: 30px;
@@ -57,9 +55,11 @@ body {
   max-height: 400px;
   overflow-wrap: break-word;
 }
+
 #card-style-1, #card-style-2, #card-style-3{
   display: none;
 }
+
 .judgeControls{
   margin-top: 50px;
 }
@@ -70,16 +70,6 @@ body {
   border-radius: 2px;
   box-shadow: 2px 2px 8px #888888;
 }
-
-/* .test-card-1, .test-card-2, .test-card-3 {
-  text-align: center;
-  width: 310px;
-  height: 440px;
-  background-color: aliceblue;
-  border: 1px solid gray;
-  border-radius: 30px;
-  box-shadow: 10px 10px 8px #888888;
-} */
 
 .action-panel {
   background-color: white;
@@ -92,8 +82,6 @@ body {
   border: 10px solid #FC7A1E;
   border-style: groove ridge ridge groove;
   border-radius: 30px;
-  /* padding-bottom: 75px; */
-  /* height: 100%; */
 }
 
 .button-panel {
@@ -106,12 +94,9 @@ body {
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
   font-size: 72px;
-  /* background-color: gray; */
   border: 3px solid #F9C784;
   border-radius: 15px;
-  /* padding: 50px; */
   width: 60%;
-  /* float: left; */
   margin: 15px;
 }
 
@@ -120,15 +105,12 @@ body {
 }
 
 .submit {
-  /* background-color: aqua; */
   border: 3px solid #F9C784;
   border-radius: 15px;
   padding-left: 40px;
   padding-right: 40px;
   margin: 15px;
   padding-top: 25px;
-  /* width: 60%; */
-  /* float: right; */
 }
 
 div#footer {
@@ -157,16 +139,15 @@ div#footer {
   flex-direction: row;
 }
 
-
 #turnOver {
   display: hidden;
 }
 
 /* I admit this is a hack way to hide errors but it works */
-
 #errorOutput {
   display: none;
 }
+
 .btn-circle.btn-md {
   width: 50px;
   height: 50px;
@@ -204,7 +185,6 @@ div#footer {
   background-color: white;
 }
 
-/* This is such a hack omg */
 #cyclePlayer {
   position: fixed;
   left: 12%;
@@ -218,7 +198,6 @@ div#footer {
   position: fixed;
   top: 40%;
   right: 10px;
-  /* border: 1px solid black; */
   max-width: 150px;
   border-radius: 5px;
   padding: 10px;

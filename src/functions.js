@@ -58,18 +58,13 @@ export default class APIReturn {
 
       var http = new XMLHttpRequest();
       var url = 'http://localhost:5000/api/Cards';
-      // var url = '/server';
-      // var params = `answer=${answer}&playerID=${id}`;
       http.open('POST', url, true);
       
-
       //Send the proper header information along with the request
       http.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
       
       http.onreadystatechange = function () {
-        // Call a function when the state changes.
         if (http.readyState == 4 && http.status == 200) {
-          alert(http.responseText);
         }
       };
 
@@ -84,10 +79,8 @@ export default class APIReturn {
       }
 
       http.send(JSON.stringify(params));
-      // console.log(JSON.stringify(params));
     });
   }
-  // put response
   static selectAPI(selectedcard) {
     return new Promise(function () {
       console.log(selectedcard);
@@ -97,12 +90,9 @@ export default class APIReturn {
       var url = 'http://localhost:5000/api/Selects';
       http.open('POST', url, true);
       
-
-      //Send the proper header information along with the request
       http.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
       
       http.onreadystatechange = function () {
-        // Call a function when the state changes.
         if (http.readyState == 4 && http.status == 200) {
           alert(http.responseText);
         }
@@ -110,7 +100,6 @@ export default class APIReturn {
       console.log(selectedcard);
 
       http.send(JSON.stringify(params));
-      // console.log(JSON.stringify(params));
     });
   }
   static grabSelect2(id) {
