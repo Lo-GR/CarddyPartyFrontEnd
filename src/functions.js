@@ -65,6 +65,7 @@ export default class APIReturn {
       
       http.onreadystatechange = function () {
         if (http.readyState == 4 && http.status == 200) {
+          alert("no empty code blocks :)");
         }
       };
 

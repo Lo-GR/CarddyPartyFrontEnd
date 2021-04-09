@@ -106,8 +106,8 @@ $(document).ready(function () {
     });
   });
 
-  $("#reload").click(function(){
-    location.reload(); 
+  $("#reload").click(function () {
+    location.reload();
   });
 
   // CODE FOR JUDGE STUFF
@@ -163,32 +163,32 @@ $(document).ready(function () {
       console.log(error);
     });
   });
-  
+
   $("#getthemcards").click(function () {
     let promiseSelect1 = APIReturn.grabSelect1();
     promiseSelect1.then(function (response1) {
       const selectbody = JSON.parse(response1);
       let selectCounter = 1;
-      setTimeout(function(){
-      for (let i = selectbody.length - 3; i <= selectbody.length; i++ )
-      {
-        console.log(selectbody[i].selectedcard);
-        let promiseSelect2 = APIReturn.grabSelect2(selectbody[i].selectedcard);
-        promiseSelect2.then(function(response2){
-          const body = JSON.parse(response2);
-          $('.cardtext' + selectCounter).html(body.answer);
-          selectCounter ++;
-        }, function (error2){
-          $('.output').text(`There was an error processing your request: ${error2}`);
-        console.log(error2);
-        });
-      }
-      $('.prompt-window-text').text(body.description);
-    }, function (error1) {
-      $('.output').text(`There was an error processing your request: ${error1}`);
-      console.log(error1);
-    });
-  }, 500);
+      setTimeout(function () {
+        for (let i = selectbody.length - 3; i <= selectbody.length; i++) {
+          console.log(selectbody[i].selectedcard);
+          let promiseSelect2 = APIReturn.grabSelect2(selectbody[i].selectedcard);
+          promiseSelect2.then(function (response2) {
+            const body = JSON.parse(response2);
+            $('.cardtext' + selectCounter).html(body.answer);
+            selectCounter++;
+          }, function (error2) {
+            $('.output').text(`There was an error processing your request: ${error2}`);
+            console.log(error2);
+          });
+        }
+        // Linter says the "body" in the below line is undefined, this might need to be selectbody?
+        $('.prompt-window-text').text(body.description);
+      }, function (error1) {
+        $('.output').text(`There was an error processing your request: ${error1}`);
+        console.log(error1);
+      });
+    }, 500);
   });
 
   document.getElementById('turnOver').style.visibility = 'hidden';
