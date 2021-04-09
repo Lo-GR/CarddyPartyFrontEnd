@@ -4,7 +4,7 @@
 
 ## Description
 
-_Card Game similar to JackBox/CAH. Rules still in development_
+_Card Game similar to JackBox/CAH. Rules still in development. This is the front end piece of a full stack repo. See the backend here https://github.com/Lo-GR/CarddyPartyBackEnd_
 
 ------------------------------
 ### <u>Table of Contents</u>
@@ -60,7 +60,7 @@ View the server-side application in your browser for full instructions.
 
 ## Known Bugs and Issues
 
-:)
+This project is a proof of concept project. There will be multiple bugs and expected issues. A portfolio version in development.
 
 ## Support and contact details
 
@@ -89,3 +89,9 @@ Y'all add yourselves here
 *  popper.js: 1.16.1
 
 ### License Information
+
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2021, Logan Roth, Ash Porter, Dani Renner, Nick Lindau.
+
+Please contact Contributor for further use information or if you would like to make a contribution.
