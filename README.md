@@ -190,6 +190,8 @@ _Ash Porter - Discord: @KirbyPaint#0751_
 
 _Logan Roth - diamondintheroth@gmail.com - [GitHub(Lo-GR)](https://github.com/Lo-GR)_
 
+_Dani Renner - danijrenner@gmail.com - [GitHub(dani-renner)](https://github.com/dani-renner)_
+
 ## Technologies Used
 
 *  babel/core: 7.6.4
